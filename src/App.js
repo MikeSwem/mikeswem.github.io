@@ -4,9 +4,10 @@ import styled, { css } from "styled-components";
 const Header = styled.div`
   width: 100%;
   height: 100px;
-  display: flex;
+  position: absolute;
+  left: 34px;
+  top: 34px;
   align-context: space-around;
-  padding: 30px 160px;
   color: white;
   transition: 0.5s ease-in-out;
 `;
@@ -106,14 +107,14 @@ function App() {
         style={!open ? { color: "black" } : { color: "white" }}
       >
         {`{} Michael Swemmer`}
-        <>
-          <Hamburger open={open} onClick={() => setOpen(!open)}>
-            <HamburgerLayer open={open} />
-            <HamburgerLayer open={open} />
-            <HamburgerLayer open={open} />
-          </Hamburger>
-        </>
       </Header>
+      <>
+        <Hamburger open={open} onClick={() => setOpen(!open)}>
+          <HamburgerLayer open={open} />
+          <HamburgerLayer open={open} />
+          <HamburgerLayer open={open} />
+        </Hamburger>
+      </>
     </>
   );
 }
